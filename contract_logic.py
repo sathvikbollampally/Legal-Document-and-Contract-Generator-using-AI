@@ -4,7 +4,8 @@ from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 # === API Setup ===
-API = "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"
+import os
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=API)
 
 # === Role Mapping ===

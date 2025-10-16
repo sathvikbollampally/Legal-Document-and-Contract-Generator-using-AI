@@ -4,7 +4,8 @@ from groq import Groq
 from datetime import datetime
 
 # === Groq API Key Setup ===
-API = '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'
+import os
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=API)
 
 # === Streamlit Page Setup ===
