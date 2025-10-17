@@ -4,9 +4,19 @@ from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 # === API Setup ===
+from dotenv import load_dotenv
 import os
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+# Load the .env file
+load_dotenv()
+
+# Get the API key from environment variable
+API = os.getenv("GROQ_API_KEY")
+
+from groq import Groq  # or wherever you import Groq from
+
 client = Groq(api_key=API)
+
 
 # === Role Mapping ===
 def get_roles(contract_type):

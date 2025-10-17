@@ -4,9 +4,20 @@ from groq import Groq
 from datetime import datetime
 
 # === Groq API Key Setup ===
+
+from dotenv import load_dotenv
 import os
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+
+# Load the .env file
+load_dotenv()
+
+# Get the API key from environment variable
+API = os.getenv("GROQ_API_KEY")
+
+from groq import Groq  # or wherever you import Groq from
+
 client = Groq(api_key=API)
+
 
 # === Streamlit Page Setup ===
 st.set_page_config(page_title="Legal Contract Generator", layout="centered")
